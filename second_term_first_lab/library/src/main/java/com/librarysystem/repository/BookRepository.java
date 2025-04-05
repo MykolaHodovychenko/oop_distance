@@ -1,7 +1,0 @@
-package com.librarysystem.repository;
-
-import com.librarysystem.model.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface BookRepository extends JpaRepository<Book, Long> {
-}
