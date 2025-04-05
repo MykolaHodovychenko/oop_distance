@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "78242283-c454-4890-b395-57b3fbdfcbb9",
+		"name": "Library System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43649930"
+	},
+	"item": [
+		{
+			"name": "Create Author",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"William Shakespeare\"\n}"
+				},
+				"url": "localhost:8080/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Authors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/authors"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Hamlet\",\n  \"authorId\": 1\n}"
+				},
+				"url": "localhost:8080/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Library Member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Emily Bront\\u00eb\"\n}"
+				},
+				"url": "localhost:8080/api/members"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/members"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrow Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bookId\": 1,\n  \"memberId\": 1\n}"
+				},
+				"url": "localhost:8080/api/books/borrow"
+			},
+			"response": []
+		},
+		{
+			"name": "Return Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bookId\": 1,\n  \"memberId\": 1\n}"
+				},
+				"url": "localhost:8080/api/books/return"
+			},
+			"response": []
+		}
+	]
+}

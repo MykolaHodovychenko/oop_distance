@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "ae186afa-2b32-44c1-b9d7-dd76926f4889",
+		"name": "OnlineStore Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43649930"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newuser\",\n  \"password\": \"newpass\"\n}"
+				},
+				"url": "localhost:8080/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newuser\",\n  \"password\": \"newpass\"\n}"
+				},
+				"url": "localhost:8080/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products (with JWT)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": "localhost:8080/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders (with JWT)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
