@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "6b4d7b26-8659-41cd-84b0-060a95c4ed9a",
+		"name": "CoursePlatform API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43649930"
+	},
+	"item": [
+		{
+			"name": "Auth - Register (Instructor)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"instructor.user\",\n  \"password\": \"password123\",\n  \"fullName\": \"Dr. Spring\",\n  \"role\": \"ROLE_USER\"\n}"
+				},
+				"url": "http://localhost:8080/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Register (ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin.user\",\n  \"password\": \"admin123\",\n  \"fullName\": \"Admin One\",\n  \"role\": \"ROLE_ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Login (Admin)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"admin.user\",\n  \"password\": \"admin123\"\n}"
+				},
+				"url": "http://localhost:8080/api/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Users - Get All (ADMIN)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:8080/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Instructor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullName\": \"Dr. Spring\",\n  \"userId\": 2\n}"
+				},
+				"url": "http://localhost:8080/api/instructors"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Course (ADMIN)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Java Spring Boot\",\n  \"description\": \"Поглиблений курс зі Spring Boot\",\n  \"duration\": 8,\n  \"instructorId\": 1\n}"
+				},
+				"url": "http://localhost:8080/api/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Instructors",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:8080/api/instructors"
+			},
+			"response": []
+		}
+	]
+}
